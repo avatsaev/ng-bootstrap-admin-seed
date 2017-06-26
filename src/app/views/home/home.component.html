@@ -1,0 +1,117 @@
+<app-page-header [title]="'HOME'"></app-page-header>
+<div class="row" style="min-height: 100%;">
+
+  <div class="col col-xl-6 col-lg-12">
+
+    <div class="card ">
+      <div class="card-header">
+        Forms
+      </div>
+      <div class="card-block">
+        <form class="form-inline mb-3">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+                     name="dp"  ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-addon" (click)="d.toggle()" >
+                <span class="fa fa-calendar"></span>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <form role="form">
+          <fieldset class="form-group">
+            <label>Text Input</label>
+            <input class="form-control">
+            <p class="help-block">Example block-level help text here.</p>
+          </fieldset>
+
+          <div class="form-group">
+            <label>Selects</label>
+            <select class="form-control">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+
+          <div class="form-group input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+
+          <div class="form-group input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn"><button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button></span>
+          </div>
+
+        </form>
+
+          <ngb-timepicker [(ngModel)]="SecondsTime" [seconds]="seconds"></ngb-timepicker>
+          <button class="btn btn-sm btn-outline-{{seconds ? 'success' : 'danger'}}" (click)="toggleSeconds()">
+            Seconds - {{seconds ? "ON" : "OFF"}}
+          </button>
+          <div class="alert alert-info mt-3 mb-0">
+            <b>Selected time: </b>{{SecondsTime | json}}
+          </div>
+      </div>
+
+      <div class="card-footer ">
+
+        <ngb-pagination [collectionSize]="120"  [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="col col-xl-6 col-lg-12">
+
+    <div class="card ">
+      <div class="card-header">
+        Tables
+      </div>
+
+      <table class="card-block table table-hover table-striped">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+  </div>

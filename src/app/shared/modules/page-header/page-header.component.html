@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xl-12">
+        <h2 class="page-header text-muted">
+            {{title}}
+        </h2>
+
+        <ol class="breadcrumb">
+
+            <li class="breadcrumb-item">
+                <i class="fa fa-home"></i> <a [routerLink]="['/home']">Home</a>
+            </li>
+
+            <li
+                *ngFor="let breadcrumb of breadcrumbs; let i = index"
+                class="breadcrumb-item"
+                [ngClass]="{'active': i === breadcrumbs.length-1}"
+            >
+                <i *ngIf="breadcrumb.icon" class="fa {{breadcrumb.icon}}"></i>
+                <i *ngIf="!breadcrumb.icon" class="fa fa-gear"></i>
+
+                <a *ngIf="i < breadcrumbs.length-1" [routerLink]="breadcrumb.route" > {{breadcrumb.title}}</a>
+                <span *ngIf="i === breadcrumbs.length-1"> {{breadcrumb.title}} </span>
+            </li>
+        </ol>
+
+    </div>
+</div>
